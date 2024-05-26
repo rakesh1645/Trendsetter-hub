@@ -3,7 +3,7 @@ import RoutNav from "./router";
 import './style/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderComponent from "./component/HeaderComponent";
-import FooterComponenet from "./component/FooteComponent";
+import FooterComponenet from "./component/FooterComponent";
 function App() {
     return(
    <>

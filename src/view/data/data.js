@@ -170,6 +170,12 @@ export const bestseller=[
         img:require('../Images/shop4.jpg'),
       
     },
+    {
+        id:3,
+        name:"Lymio Men Cargo || Men Cargo Pants || Men Cargo Pants Cotton || Cargos for Men (Cargo-01-04)",
+        img:require('../Images/shop4.jpg'),
+      
+    },
  ]
  export const sliderimgs=[
     {

@@ -32,7 +32,7 @@ export default function Login() {
     }
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
             <Card style={{ width: '48rem', padding: '20px', border: '1px solid black' }}>
                 <Row>
                     <h2 style={{ textAlign: 'center' }}>

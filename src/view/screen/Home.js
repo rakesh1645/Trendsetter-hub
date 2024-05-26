@@ -41,7 +41,7 @@ function Home() {
                         </Carousel>
                     </Col>
                 </Row>
-                <Row  style={{textAlign:"center", margin:'10px'}}> 
+                <Row  style={{textAlign:"center"}}> 
                     <h2 >
                     COMFTABLE COTTON PANTS
                     </h2>
@@ -50,8 +50,8 @@ function Home() {
 
                 <Row >
                     {
-                       product&&product.map(a => (
-                            <Col lg={3} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}  style={{cursor:'pointer', display:'flex',justifyContent:"center"}}>
+                       product&&product.map((a,index) => (
+                            <Col key={index} lg={3} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}  style={{cursor:'pointer', display:'flex',justifyContent:"center"}}>
                                 <Card style={{  margin:"10px"}}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>
@@ -71,8 +71,8 @@ function Home() {
                 </Row>
                 <Row>
                     {
-                       bestsellers&&bestsellers.map(a => (
-                            <Col  lg={3} md={6} sm={12} onClick={()=>nav ('/details',{state:a})} >
+                       bestsellers&&bestsellers.map((a,index) => (
+                            <Col key={index} lg={3} md={6} sm={12} onClick={()=>nav ('/details',{state:a})} >
                                 <Card style={{ margin:"10px" }}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>

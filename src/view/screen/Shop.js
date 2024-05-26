@@ -17,11 +17,11 @@ function Shop() {
     return (
         <>
             <Container style={{marginTop:"100px"}}>
-                <Row>
+                <Row >
                     {
-                       product&&product.map(a => (
-                            <Col onClick={()=>nav ('/details',{state:a})} >
-                                <Card style={{ width: '18rem' }}>
+                       product&&product.map((a,index) => (
+                            <Col lg={4} md={6} sm={12}  key={index}onClick={()=>nav ('/details',{state:a})} style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }}>
+                                <Card style={{margin:'10px' }}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>
                                         <Card.Title>{a.name}</Card.Title>
@@ -44,8 +44,8 @@ function Shop() {
                 <Row>
                 {
                        Product.map(a => (
-                            <Col onClick={()=>nav ('/details',{state:a})}>
-                                <Card style={{ width: '18rem' }}>
+                            <Col  lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}>
+                                <Card style={{margin:'10px' }}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>
                                         <Card.Title>{a.name}</Card.Title>

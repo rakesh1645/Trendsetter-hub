@@ -4,7 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
+import '../style/style.css';
 function HeaderComponent() {
   const[user,setUser] = useState('')
 
@@ -12,39 +13,42 @@ function HeaderComponent() {
     setUser(localStorage.getItem('user'))
 
   },[])
+  const [expanded, setExpanded] = useState(false);
+  
+  const handleToggle = () => setExpanded(!expanded);
+  const Close = () => setExpanded(false);
   return (
     
       
       <Row>
         <Col>
-          <Navbar expand="lg" className="navbar-dark bg-dark navbar fixed-top " >
+          <Navbar   expanded={expanded}  expand="lg" className="navbar-dark bg-dark navbar fixed-top " >
             <Container fluid>
-              <Navbar.Brand href="#">Trendsetters Hub</Navbar.Brand>
-              <Navbar.Toggle aria-controls="navbarScroll" />
+              <Navbar.Brand to="/">Trendsetters Hub</Navbar.Brand>
+              <Navbar.Toggle aria-controls="navbarScroll"  onClick={handleToggle} />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
                   className="me-auto my-2 my-lg-0"
-                  style={{ maxHeight: '100px' }}
                   navbarScroll
                 >
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="Shop">Shop</Nav.Link>
-                  <Nav.Link href="product">Sports</Nav.Link>
+                  <Link to="/" className="navbarlinks" onClick={Close} >Home</Link>
+                  <Link to="/Shop"  className="navbarlinks"  onClick={Close}>Shop</Link>
+                  <Link to="/Product"  className="navbarlinks" onClick={Close} >Sports</Link>
 
               
                   {
               user?
-                  <Nav.Link href="/logout"   >
+                  <Link to="/logout"   className="navbarlinks"  onClick={Close} >
                   Logout
-                </Nav.Link>
+                </Link>
               :
               <>
-            <Nav.Link href="/login" >
+            <Link to="/login"    className="navbarlinks"  onClick={Close}>
               Login
-            </Nav.Link>
-            <Nav.Link href="/Register"  >
+            </Link>
+            <Link to="/Resigter" className="navbarlinks" onClick={Close}  >
               Register
-            </Nav.Link>
+            </Link>
             </>
             
             

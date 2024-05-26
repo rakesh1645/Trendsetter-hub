@@ -18,6 +18,7 @@ function Details() {
         if (location.state) {
             setProductDetails(location.state);
             setImage(location.state.img);
+            window.scrollTo(0, 0);
         }
     }, [location.state]);
 
@@ -80,10 +81,10 @@ function Details() {
                         </Row>
                         <Row>
                             <Col>
-                                <Accordion defaultActiveKey="0">
+                                <Accordion>
                                     <Accordion.Item style={{ marginTop: 10 }} eventKey="0">
                                         <Accordion.Header>Size Chart</Accordion.Header>
-                                        <Accordion.Body >
+                                        <Accordion.Body>
                                             <Image src={require('../Images/sizechar.webp')} />
                                         </Accordion.Body>
                                     </Accordion.Item>

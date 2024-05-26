@@ -28,27 +28,27 @@ function RoutNav(){
     return(
         <>
         <Routes>
-            <Route path='/'Component={home}/>
-            <Route path='/product'Component={product}/>
-            <Route path='/details'Component={Details}/>
-            <Route path='/shop'Component={Shop}/>
-            <Route path='/About'Component={About}/>
-            <Route path='/Contact'Component={Contact}/>
-            <Route path='/logout'Component={Logout}/>
-            <Route path='/addtocart'Component={Addtocart}/>
-            <Route path='/buynow'Component={Buynow}/>
-            <Route path='/forget' Component={Forget}/>
-            <Route path='/Otp' Component={OTPPage}/>
-            <Route path='/Resigter' Component={Resigter}/>
+            <Route excat path='/'Component={home}/>
+            <Route excat path='/product'Component={product}/>
+            <Route excat path='/details'Component={Details}/>
+            <Route excat path='/shop'Component={Shop}/>
+            <Route excat path='/About'Component={About}/>
+            <Route excat path='/Contact'Component={Contact}/>
+            <Route excat path='/logout'Component={Logout}/>
+            <Route excat path='/addtocart'Component={Addtocart}/>
+            <Route excat path='/buynow'Component={Buynow}/>
+            <Route excat path='/forget' Component={Forget}/>
+            <Route excat path='/Otp' Component={OTPPage}/>
+            <Route excat path='/Resigter' Component={Resigter}/>
             
             { userdata!==null?<>
-                <Route path='/' Component={Home}/>
+                <Route excat path='/' Component={Home}/>
                </>
                :
                 <>
-               <Route path='/login' Component={Login}/>
+               <Route excat path='/login' Component={Login}/>
                
-                <Route path='/' Component={Home}/>
+                <Route excat path='/' Component={Home}/>
                 </>
             }
             
