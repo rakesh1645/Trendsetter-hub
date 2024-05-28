@@ -1,7 +1,5 @@
 img{
     width: 100%;
- 
-  
 }
 .navbarlinks{
     text-decoration: none;
@@ -26,7 +24,9 @@ img{
     color: #FFF;
     font-size: 20px;
     margin:5px 0px;
+    
 }
+
 .about-text{
     text-align: center;
     margin-top: 20px;
@@ -40,15 +40,9 @@ img{
 
 }
 
-.Contact-heading{
-    margin-top: 50px;
-    text-align: center;
 
-}
-.Contact-form{
-    background-color: beige;
-}
 .Footer{
     background-color: rgb(2, 2, 84);
     color: #FFF;
 }
+

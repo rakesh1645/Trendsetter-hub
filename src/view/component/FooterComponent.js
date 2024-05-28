@@ -1,5 +1,6 @@
 import { Container, Row, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import '../style/style.css';
 
 
 
@@ -7,7 +8,7 @@ function FooterComponenet() {
   return (
     <Container fluid className="Footer">
       <Row>
-        <Col lg={4} md={6} className="polices">
+        <Col lg={4} md={6} className="polices" style={{marginTop:'20px'}}>
           <h3>Expore us</h3>
 
           <Link to="/About">About us</Link>
@@ -17,7 +18,7 @@ function FooterComponenet() {
 
 
         </Col>
-        <Col lg={4} md={6} className="polices">
+        <Col lg={4} md={6} className="polices" style={{marginTop:'20px'}}>
           <h3 >Our Polices</h3>
           <Link to="">Shipping Details</Link>
           <Link to="">Return & Exchange Policy</Link>
@@ -27,7 +28,7 @@ function FooterComponenet() {
 
 
         </Col>
-        <Col lg={4} md={6}  className="polices">
+        <Col lg={4} md={6}  className="polices" style={{marginTop:'20px'}}>
           <h3>HELP</h3>
          <Link to=''>payments</Link>
          <Link to=''>Shipping</Link>

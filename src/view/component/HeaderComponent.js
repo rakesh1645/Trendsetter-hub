@@ -46,7 +46,7 @@ function HeaderComponent() {
             <Link to="/login"    className="navbarlinks"  onClick={Close}>
               Login
             </Link>
-            <Link to="/Resigter" className="navbarlinks" onClick={Close}  >
+            <Link to="/register" className="navbarlinks" onClick={Close}  >
               Register
             </Link>
             </>

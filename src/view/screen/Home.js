@@ -51,7 +51,7 @@ function Home() {
                 <Row >
                     {
                        product&&product.map((a,index) => (
-                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}  style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }}>
+                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }} >
                                 <Card style={{  margin:"10px"}}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>
@@ -66,13 +66,13 @@ function Home() {
                 </Row>
                 <Row>
                     <Col>
-                    <Image className='Productimg' src={require('../Images/4.png')} />
+                    <Image  src={require('../Images/4.png')} />
                     </Col>
                 </Row>
                 <Row>
                     {
                        bestsellers&&bestsellers.map((a,index) => (
-                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}  style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }}>
+                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})} style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }}>
                                 <Card style={{ margin:"10px" }}>
                                     <Card.Img variant="top" src={a.img} />
                                     <Card.Body>
