@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../style/style.css';
 function HeaderComponent() {
   const[user,setUser] = useState('')
@@ -17,6 +17,11 @@ function HeaderComponent() {
   
   const handleToggle = () => setExpanded(!expanded);
   const Close = () => setExpanded(false);
+  const navigate1 = useNavigate();
+  const shop=()=>{
+    navigate1('/shop')
+  } 
+
   return (
     
       
@@ -64,7 +69,7 @@ function HeaderComponent() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success mx-primary">Search</Button>
+                  <Button variant="outline-success mx-primary" onClick={shop} >Search</Button>
                 </Form>
               </Navbar.Collapse>
             </Container>

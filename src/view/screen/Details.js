@@ -13,7 +13,7 @@ function Details() {
     const [productDetails, setProductDetails] = useState({});
     const [img, setImage] = useState('');
 
-    
+
     useEffect(() => {
         if (location.state) {
             setProductDetails(location.state);
@@ -33,12 +33,12 @@ function Details() {
 
 
     useEffect(() => {
-      setfirst(bestseller)
+        setfirst(bestseller)
     }, [])
-    
+
 
     return (
-        <Container style={{marginTop:'100px'}}>
+        <Container style={{ marginTop: '100px' }}>
             <Row>
                 <Col lg={6}>
                     <Image fluid src={img ? img : productDetails.img} />
@@ -53,8 +53,9 @@ function Details() {
                 <Col lg={6}>
                     <Row>
                         <Col><h4>{productDetails.name || "Product Name"}</h4><br></br>
-                        <h4>Rs. {productDetails.price || "1,399.00"}</h4></Col>
+                            <p className="MRP">{productDetails.price} M.R.P; <del>{productDetails.delprice}</del> ({(100 - ((productDetails.price / productDetails.delprice) * 100)).toFixed(2)}% off) </p></Col>
                     </Row>
+
                     <Row>
                         <Col>
                             <Image src={require('../Images/start.jpeg')} style={{ width: 20 }} />
@@ -101,38 +102,48 @@ function Details() {
                                 <Button variant="danger" style={{ width: 30, height: 30 }}></Button>{' '}
                                 <Button variant="info" style={{ width: 30, height: 30 }}></Button>{' '}
                                 <Button variant="light" style={{ width: 30, height: 30 }}></Button>{' '}
-                                <Button variant="dark" style={{ width: 30, height: 30 }}></Button>{' '}
-                                <Button variant="link" style={{ width: 30, height: 30 }}></Button>{' '}
+
+
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <Button className="m-2" variant="primary" style={{ width: "100%", height: 30 }} onClick={addtoCart}>Add to cart</Button>{' '}
+                                <Button className="m-2 " variant="primary" style={{ width: "100%", }} onClick={addtoCart}>Add to cart</Button>{' '}
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <Button className="m-2" variant="primary" style={{ width: "100%", height: 30 }}>Buy now</Button>{' '}
+                                <Button className="m-2" variant="primary" style={{ width: "100%" }}>Buy now</Button>{' '}
                             </Col>
                         </Row>
                     </Row>
                 </Col>
             </Row>
+            <h3 className="my-5">{productDetails.Description}</h3>
+            <Row>
+                <Image src={productDetails.imgdiscribtion} />
+            </Row>
+            <Row>
+                <Image src={productDetails.imgdiscribtion2} />
+            </Row>
+            
+
             <Row>
                 <Col>
                     <h1>BestSeller</h1>
                 </Col>
                 <Row>
                     {first && first.map((value, index) => (
-                        <Col key={index} lg={3} md={8} sm={12} onClick={() => navigate('/details', { state: value })} style={{ cursor: 'pointer' }}>
-                            <Card style={{margin:"10px"}}>
-                                <Card.Img variant="top" src={value.img} />
+                        <Col key={index} lg={3} md={8} sm={12} onClick={() => navigate('/details', { state: value })} style={{  cursor: 'pointer', display: 'flex', justifyContent: "center"  }}>
+                            <Card style={{ margin: "10px" }}>
+                                <Card.Img variant="top" src={value.img}style={{height:'400px', width:'100%', objectFit: 'cover'}}  />
                                 <Card.Body>
                                     <Card.Title style={{ fontSize: 16 }}>{value.name}</Card.Title>
                                     <Card.Text>
                                         Some quick example text to build on the card title and make up the bulk of the card's content.
                                     </Card.Text>
-                                    <Button variant="primary">Add to cart</Button>
+                                    <p>{value.price} M.R.P; <del>{value.delprice}</del> ({(100 - ((value.price / value.delprice) * 100)).toFixed(2)}% off)</p> 
+                                   
                                 </Card.Body>
                             </Card>
                         </Col>

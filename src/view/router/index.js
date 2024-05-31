@@ -6,13 +6,14 @@ import Details from '../screen/Details';
 import Shop from '../screen/Shop';
 import About from '../screen/About';
 import Contact from '../screen/Contact';
-import Login from '../screen/Login';
-import Logout from '../screen/Logout';
-import Forget from '../screen/Forget';
+import Logout from '../Authentications/Logout'
+import Login from '../Authentications/Login';
+import Forget from '../Authentications/Forget';
 import Addtocart from '../screen/Addtocart';
-import OTPPage from '../screen/Otp';
-import Register from '../screen/Register';  // Ensure the file name is Register.js
+import OTPPage from '../Authentications/Otp';
+import Register from '../Authentications/Register'; 
 import Buynow from '../screen/Buynow';
+import ScrollToTop from '../screen/ScrollTop';
 
 function RoutNav() {
   const [userdata, setUserData] = useState('');
@@ -25,6 +26,7 @@ function RoutNav() {
 
   return (
     <>
+    <ScrollToTop/>
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/product' element={<Product />} />
@@ -37,13 +39,13 @@ function RoutNav() {
         <Route exact path='/buynow' element={<Buynow />} />
         <Route exact path='/forget' element={<Forget />} />
         <Route exact path='/otp' element={<OTPPage />} />
-        <Route exact path='/register' element={<Register />} />  {/* Correct path */}
+        <Route exact path='/register' element={<Register />} /> 
         
         { userdata !== null ? (
           <Route exact path='/' element={<Home />} />
         ) : (
           <>
-            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/login' element={<Login/>} />
             <Route exact path='/' element={<Home />} />
           </>
         )}

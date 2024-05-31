@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Form, Button, Alert, Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -23,7 +23,9 @@ function Register() {
   };
 
   return (
-    <Form onSubmit={handleSubmit} style={{margin:'100px'}}>
+    <Card style={{margin:'100px', padding:'20px 40px', border:"1px solid black"}}>
+      <h1 style={{textAlign:'center'}}>Register here</h1>
+    <Form onSubmit={handleSubmit} >
       {error && <Alert variant="danger">{error}</Alert>}
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -55,10 +57,13 @@ function Register() {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button  className="my-3"variant="primary" type="submit">
         Register
       </Button>
     </Form>
+    <p><Link to='/Login' style={{ textDecoration: "none"}}>Resigter here</Link></p>
+    </Card>
+
   );
 }
 
