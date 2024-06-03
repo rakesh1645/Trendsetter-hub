@@ -20,6 +20,12 @@ function Home() {
     useEffect(()=>{
         setBestellers(bestseller);
     }, [])
+    const navigate=useNavigate();
+    function Buynow() {
+      
+        navigate('/buynow');
+    }
+
     return (
         <>
           <Container style={{marginTop:'40px'}} >
@@ -51,14 +57,13 @@ function Home() {
                 <Row >
                     {
                        product&&product.map((a,index) => (
-                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }} >
+                            <Col key={index} lg={4} md={6} sm={12} onClick={()=>nav ('/details',{state:a})}style={{ cursor: 'pointer', display: 'flex', justifyContent: "center", marginTop:'4px' }} >
                                 <Card >
                                     <Card.Img variant="top" src={a.img} style={{height:'400px', width:'100%', objectFit: 'cover'}}  />
                                     <Card.Body>
                                         <Card.Title>{a.name}</Card.Title>
-                                        <p>{a.price} M.R.P;  <del>{a.delprice}  </del>(41 off)</p>
-                                       
-                                        <Button variant="primary">Buy Now</Button>
+                                        <p>{a.price} M.R.P; <del>{a.delprice}</del> {(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off</p> 
+                                   
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -67,7 +72,7 @@ function Home() {
                 </Row>
                 <Row className='my-5'>
                     <Col>
-                    <Image  src={require('../Images/4.png')} />
+                    <Image  src={require('../Images/gifforhome.png')} />
                     </Col>
                 </Row>
                 <Row>
@@ -90,6 +95,12 @@ function Home() {
                         ))
                     }
                 </Row>
+                <Row className='my-5'>
+                    <Col>
+                    <Image  src={require('../Images/gifforshop.png')} />
+                    </Col>
+                </Row>
+
                 <Row >
                     {
                        product&&product.map((a,index) => (

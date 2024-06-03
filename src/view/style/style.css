@@ -50,3 +50,18 @@ img{
     font-size: 20px;
     
 }
+
+  .quantity-btn:hover {
+    background: #f0f0f0;
+  }
+  
+  .footerButton {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+  
+  .footerButton:hover {
+    background-color: #0056b3;
+  }
+  

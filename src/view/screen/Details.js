@@ -5,6 +5,7 @@ import { bestseller, addtocart } from '../data/data';
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Buynow from "./Buynow";
 
 function Details() {
     const navigate = useNavigate();
@@ -29,6 +30,10 @@ function Details() {
     function addtoCart() {
         addtocart.push(productDetails);
         navigate('/addtocart', { state: productDetails });
+    }
+    function Buynow() {
+      
+        navigate('/buynow', { state: productDetails });
     }
 
 
@@ -113,7 +118,7 @@ function Details() {
                         </Row>
                         <Row>
                             <Col>
-                                <Button className="m-2" variant="primary" style={{ width: "100%" }}>Buy now</Button>{' '}
+                                <Button className="m-2" variant="primary" style={{ width: "100%" }} onClick={Buynow}>Buy now</Button>{' '}
                             </Col>
                         </Row>
                     </Row>
