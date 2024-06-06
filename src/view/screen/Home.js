@@ -37,11 +37,11 @@ function Home() {
                                
                             </Carousel.Item>
                             <Carousel.Item>
-                                <Image className='slider' src={require('../Images/banner2.png.png')} />
+                                <Image className='slider' src={require('../Images/banner.png.png')} />
                                 
                             </Carousel.Item>
                             <Carousel.Item>
-                                <Image className='slider' src={require('../Images/banner.png.png')} />
+                                <Image className='slider' src={require('../Images/banner2.png.png')} />
                                 
                             </Carousel.Item>
                         </Carousel>
