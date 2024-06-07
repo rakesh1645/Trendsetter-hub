@@ -14,6 +14,7 @@ import OTPPage from '../Authentications/Otp';
 import Register from '../Authentications/Register'; 
 import Buynow from '../screen/Buynow';
 import ScrollToTop from '../screen/ScrollTop';
+import Success from '../screen/Success';
 
 function RoutNav() {
   const [userdata, setUserData] = useState('');
@@ -40,6 +41,7 @@ function RoutNav() {
         <Route exact path='/forget' element={<Forget />} />
         <Route exact path='/otp' element={<OTPPage />} />
         <Route exact path='/register' element={<Register />} /> 
+        <Route exact path='/success' element={<Success />} /> 
         
         { userdata !== null ? (
           <Route exact path='/' element={<Home />} />
