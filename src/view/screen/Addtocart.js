@@ -22,14 +22,11 @@ export default function AddToCart() {
   function QuantitySub() {
     if (quantity > 1) setQuantity(quantity - 1);
   }
-
-  function PaymentGet() {
-    if (localStorage.getItem("Email") !== null) {
-      nav("/buynow");
-    } else {
-      nav("/");
-    }
-  }
+ const navigate = useNavigate();
+  function Buynow() {
+      
+    navigate('/buynow', { state: productDetails });
+}
 
   const handleRemove = () => {
     setIsRemoved(true);
@@ -74,7 +71,7 @@ export default function AddToCart() {
             <Col className="d-flex flex-column align-items-end">
               <h5>Estimated Total Rs. {productDetails.price * quantity}</h5>
               <p>*Taxes, discounts and shipping charges included at checkout*</p>
-              <Button className="footerButton" onClick={PaymentGet}>Check out</Button>
+              <Button className="footerButton" onClick={Buynow}>Check out</Button>
             </Col>
           </Row>
         </>

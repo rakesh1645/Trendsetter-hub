@@ -30,7 +30,7 @@ function Shop() {
                                             Some quick example text to build on the card title and make up the
                                             bulk of the card's content.
                                         </Card.Text>
-                                        <strong><p>{a.price} M.R.P; <del>{a.delprice}</del>({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> </strong>
+                                       <p style={{display:'flex',alignItems:'center'}}><h3>{a.price}</h3> M.R.P; <del>{a.delprice}</del>({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
                                         <Button variant="primary">Buy Now</Button>
                                     </Card.Body>
                                 </Card>
@@ -55,7 +55,7 @@ function Shop() {
                                             Some quick example text to build on the card title and make up the
                                             bulk of the card's content.
                                         </Card.Text>
-                                        <p>{a.price} M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
+                                        <p style={{display:'flex',alignItems:'center'}}><h3>{a.price}</h3> M.R.P; <del>{a.delprice}</del>({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
                                         <Button variant="primary">Buy Now</Button>
                                     </Card.Body>
                                 </Card>

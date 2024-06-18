@@ -139,7 +139,7 @@ function Details() {
                 </Col>
                 <Row>
                     {first && first.map((value, index) => (
-                        <Col key={index} lg={3} md={8} sm={12} onClick={() => navigate('/details', { state: value })} style={{  cursor: 'pointer', display: 'flex', justifyContent: "center"  }}>
+                        <Col key={index} lg={4} md={6} sm={12} onClick={() => navigate('/details', { state: value })} style={{  cursor: 'pointer', display: 'flex', justifyContent: "center"  }}>
                             <Card style={{ margin: "10px" }}>
                                 <Card.Img variant="top" src={value.img}style={{height:'400px', width:'100%', objectFit: 'cover'}}  />
                                 <Card.Body>
@@ -147,7 +147,7 @@ function Details() {
                                     <Card.Text>
                                         Some quick example text to build on the card title and make up the bulk of the card's content.
                                     </Card.Text>
-                                    <p>{value.price} M.R.P; <del>{value.delprice}</del> ({(100 - ((value.price / value.delprice) * 100)).toFixed(2)}% off)</p> 
+                                    <p style={{display:'flex',alignItems:'center'}}><h3>{value.price} </h3>M.R.P; <del>{value.delprice}</del> ({(100 - ((value.price / value.delprice) * 100)).toFixed(2)}% off)</p> 
                                    
                                 </Card.Body>
                             </Card>

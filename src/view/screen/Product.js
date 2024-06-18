@@ -23,7 +23,7 @@ export default function Product() {
                             <Card.Img variant="top" src={a.img} style={{height:'400px', width:'100%', objectFit: 'cover'}} />
                             <Card.Body>
                                 <Card.Title className='my-3'>{a.name}</Card.Title>
-                                <p>{a.price} M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
+                                <p style={{display:'flex',alignItems:'center'}}><h3>{a.price}</h3> M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
                                
                             </Card.Body>
                         </Card>
@@ -42,7 +42,7 @@ export default function Product() {
                             <Card.Img variant="top" src={a.img} style={{height:'400px', width:'100%', objectFit: 'cover'}} />
                             <Card.Body>
                                 <Card.Title className='my-3'>{a.name}</Card.Title>
-                                <p>{a.price} M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
+                                <p style={{display:'flex',alignItems:'center'}}><h3>{a.price}</h3> M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
                                
                             </Card.Body>
                         </Card>
@@ -58,10 +58,10 @@ export default function Product() {
                 {shoping && shoping.map(a => (
                     <Col lg={4} md={6} sm={12} onClick={() => navigate('/details', { state: a })} style={{ cursor: 'pointer', display: 'flex', justifyContent: "center" }}>
                         <Card >
-                            <Card.Img variant="top" src={a.img} style={{height:'400px', width:'100%', objectFit: 'cover'}} />
+                            <Card.Img variant="top" src={a.img} />
                             <Card.Body>
                                 <Card.Title className='my-3'>{a.name}</Card.Title>
-                                <p>{a.price} M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
+                                <p style={{display:'flex',alignItems:'center'}}><h3>{a.price}</h3> M.R.P; <del>{a.delprice}</del> ({(100 - ((a.price / a.delprice) * 100)).toFixed(2)}% off)</p> 
                                
                             </Card.Body>
                         </Card>
