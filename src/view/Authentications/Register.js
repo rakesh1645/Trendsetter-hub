@@ -23,7 +23,8 @@ function Register() {
   };
 
   return (
-    <Card style={{margin:'100px', padding:'20px 40px', border:"1px solid black"}}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+    <Card style={{width: '48rem', padding: '20px', border: '1px solid black', margin: '10px' }}>
       <h1 style={{textAlign:'center'}}>Register here</h1>
     <Form onSubmit={handleSubmit} >
       {error && <Alert variant="danger">{error}</Alert>}
@@ -63,7 +64,7 @@ function Register() {
     </Form>
     <p><Link to='/Login' style={{ textDecoration: "none"}}>Resigter here</Link></p>
     </Card>
-
+</div>
   );
 }
 
